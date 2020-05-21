@@ -2,15 +2,21 @@ var wpisywanie = document.getElementById("pass");
 var div = document.querySelector("div");
 const pass = ["admin", "user"];
 const mess = ["łatwo", "Brawo Zgadłeś!"];
+
+
 // keyup to samo co input, change jesli wyjde
 
 const zadpass = ["jedEN", "DwA"];
 const zadmess = ["super", "dziala"];
 // zamiana tablicy na male litery
-zadpass.forEach((zadpasse, index) => {
-    zadpass[index] = zadpasse.toLowerCase();
-})
-console.log(zadpass[0]);
+// zadpass.forEach((zadpasse, index) => {
+//     zadpass[index] = zadpasse.toLowerCase();
+// })
+// console.log(zadpass[0]);
+
+// map nie przeorni tej tablicy ale swtorzy nowa
+const nowa = zadpass.map(string => string.toLowerCase());
+[10, 55, 44].map(number => number * 3);
 
 wpisywanie.addEventListener("input", function () {
     // wersja 1
@@ -53,7 +59,18 @@ wpisywanie.addEventListener("input", function () {
     // })
 
     // ze zmiana na poczatku na male
-    zadpass.forEach((zadpasse, index) => {
+    // zadpass.forEach((zadpasse, index) => {
+
+
+
+    //     if (zadpasse === event.target.value.toLowerCase()) {
+    //         div.textContent = zadmess[index];
+    //     }
+    // })
+
+
+    // rozwiazanie z mapą
+    nowa.forEach((zadpasse, index) => {
 
 
 
