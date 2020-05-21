@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.body.addEventListener("click", funkcja);
+        // jak funkcja zwracajaca to poprostu return na koncu
+
+        function funkcja(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            console.log(x);
+            console.log(y);
+            if (x % 2 == 0 && y % 2 == 0) {
+                document.body.style.backgroundColor = "red";
+            } else if (x % 2 == 1 && y % 2 == 1) {
+                document.body.style.backgroundColor = "blue";
+            } else {
+                document.body.style.backgroundColor = "green";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+            height: 100px;
+        }
+
+        .big {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="klasa">Nacisnij</button>
+    <ul class="ulica">
+
+    </ul>
+    <script>
+        var i = 1;
+        var ul = document.querySelector(".ulica");
+        var btn = document.querySelector(".klasa");
+        btn.addEventListener("click", function () {
+            var element = document.createElement("li");
+
+            if (i % 3 == 0) {
+                element.classList.add("big");
+            }
+            element.textContent = i;
+            ul.appendChild(element);
+            i = i + 2;
+        })
+    </script>
+</body>
+
+</html>

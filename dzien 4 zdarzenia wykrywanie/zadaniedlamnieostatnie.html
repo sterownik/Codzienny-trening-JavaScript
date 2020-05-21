@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var kol = 255;
+        window.addEventListener('keydown', myFunction);
+
+        function myFunction(event) {
+            var x = event.which;
+            console.log(x);
+
+
+            // If the pressed keyboard button is " a" or "A" (using caps lock or shift), alert some text. if
+            // if (x == 38) {
+            //     kol++;
+            //     if (kol > 255) {
+            //         kol = 255;
+            //     }
+            //     document.body.style.backgroundColor = "rgb(" + kol + "," + kol + "," + kol + ")";
+            //     console.log(kol);
+
+
+            // } else if (x == 40) {
+            //     kol--;
+            //     if (kol < 0) {
+            //         kol = 0;
+            //     }
+            //     document.body.style.backgroundColor = "rgb(" + kol + "," + kol + "," + kol + ")";
+            //     console.log(kol);
+            // }
+            switch (x) {
+                case 38:
+                    kol++;
+                    if (kol > 255) {
+                        kol = 255;
+                    }
+                    document.body.style.backgroundColor = "rgb(" + kol + "," + kol + "," + kol + ")";
+                    console.log(kol);
+                    break;
+                case 40:
+                    kol--;
+                    if (kol < 0) {
+                        kol = 0;
+                    }
+                    document.body.style.backgroundColor = "rgb(" + kol + "," + kol + "," + kol + ")";
+                    console.log(kol);
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: fixed;
+            height: 200px;
+            width: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var rusz = true;
+        var xx;
+        var yy;
+        var div = document.querySelector("div");
+        div.addEventListener("mousedown", function () {
+            console.log('down');
+            div.style.backgroundColor = "#ddd";
+            rusz = true;
+            xx = event.offsetX;
+            yy = event.offsetY;
+            console.log(xx);
+
+
+
+            div.addEventListener("mousemove", function () {
+                if (rusz) {
+                    var x = event.clientX;
+                    var y = event.clientY;
+                    div.style.left = x + 'px';
+                    div.style.top = y + 'px';
+                }
+
+            });
+
+
+        });
+        div.addEventListener("mouseup", function () {
+            console.log('up');
+            div.style.backgroundColor = "black";
+            rusz = false;
+
+
+        });
+    </script>
+</body>
+
+</html>

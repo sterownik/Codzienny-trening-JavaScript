@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <script>
+        document.body.style.height = "500vh";
+
+        document.body.style.margin = "0";
+        var element = document.createElement("div");
+        element.style.width = "100%";
+        element.style.height = "1vh";
+        element.style.position = "fixed";
+        var bool = true;
+        element.style.backgroundColor = "green";
+        let size = 1;
+        document.body.appendChild(element);
+        window.addEventListener("scroll", funkcja)
+
+        function funkcja() {
+            if (size <= window.innerHeight / 2 && bool) {
+                size++;
+                element.style.backgroundColor = "green";
+                if (size == 50) {
+                    bool = false;
+                }
+            } else if (!bool) {
+                size--;
+                element.style.backgroundColor = "red";
+                if (size == 1) {
+                    bool = true;
+                }
+            }
+            element.style.height = size + "vh";
+
+            console.log('skroll');
+
+        }
+    </script>
+</body>
+
+</html>

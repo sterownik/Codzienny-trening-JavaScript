@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: green;
+            height: 100vh;
+        }
+
+        h1 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <script>
+        document.body.addEventListener("mousemove", showCoords);
+
+        function showCoords(event) {
+            // screenY screenX mojego ekranu
+            var x = event.clientX;
+            var y = event.clientY;
+            var h = window.innerHeight;
+            var w = window.innerWidth;
+            var coor = parseFloat(x / w * 255).toFixed(0) + ", " + parseFloat(y / h * 255).toFixed(0);
+            document.querySelector("h1").textContent = coor;
+            document.body.style.backgroundColor = "rgb(" + x / w * 255 + "," + y / h * 255 + "," + x / h * 255 + ")";
+
+
+        }
+    </script>
+</body>
+
+</html>
