@@ -6,6 +6,12 @@ const mess = ["łatwo", "Brawo Zgadłeś!"];
 
 const zadpass = ["jedEN", "DwA"];
 const zadmess = ["super", "dziala"];
+// zamiana tablicy na male litery
+zadpass.forEach((zadpasse, index) => {
+    zadpass[index] = zadpasse.toLowerCase();
+})
+console.log(zadpass[0]);
+
 wpisywanie.addEventListener("input", function () {
     // wersja 1
     // moze byc this.value
@@ -37,11 +43,21 @@ wpisywanie.addEventListener("input", function () {
 
     // zaadaie dla mnie
     div.textContent = "";
+    // zadpass.forEach((zadpasse, index) => {
+
+
+
+    //     if (zadpasse.toUpperCase() === event.target.value.toUpperCase()) {
+    //         div.textContent = zadmess[index];
+    //     }
+    // })
+
+    // ze zmiana na poczatku na male
     zadpass.forEach((zadpasse, index) => {
 
 
 
-        if (zadpasse.toUpperCase() === event.target.value.toUpperCase()) {
+        if (zadpasse === event.target.value.toLowerCase()) {
             div.textContent = zadmess[index];
         }
     })
