@@ -14,7 +14,7 @@ const zadmess = ["super", "dziala"];
 // })
 // console.log(zadpass[0]);
 
-// map nie przeorni tej tablicy ale swtorzy nowa
+// map nie przeorni tej tablicy ale swtorzy nowa zamiast string moze byc cokolwiek, map dziala podobnie do forEach
 const nowa = zadpass.map(string => string.toLowerCase());
 [10, 55, 44].map(number => number * 3);
 
