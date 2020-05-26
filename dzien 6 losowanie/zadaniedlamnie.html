@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 18px;
+        }
+
+        p {
+            font-weight: 700;
+        }
+
+        p~p {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="in">Dodaj Możliwość</label>
+        <input id="in" type="text">
+        <button class="add">Dodaj</button>
+        <button class="reset">Resetuj</button>
+    </form>
+
+    <p>Komputerze kochany, pokaz co mam zrobić z tym o czym myśle</p>
+    <button class="rada">Pokaż rade</button>
+    <button class="mozliwosci">Pokaż możliwości</button>
+    <p></p>
+    <script>
+        var paragraf = document.querySelector("p~p");
+        var tablica = [];
+        var inp = document.querySelector("input");
+        var dodaj = document.querySelector("button.add");
+        var resetuj = document.querySelector("button.reset");
+        var radz = document.querySelector("button.rada");
+        var pokaz = document.querySelector("button.mozliwosci");
+        var pokazz = () => {
+            alert(tablica.join(", "));
+            // dodaje cos do poszczeolnych rzeczy w tablicy
+        }
+
+        const porada = () => {
+            var index = Math.floor(Math.random() * tablica.length);
+            paragraf.textContent = tablica[index];
+        }
+
+        const resett = () => {
+            paragraf.textContent = "";
+            tablica = [];
+        }
+
+        const dodajj = () => {
+            event.preventDefault();
+            console.log(inp.value);
+
+            for (const tab of tablica) {
+                if (tab == inp.value) {
+                    return;
+                }
+            }
+            tablica.push(inp.value);
+            inp.value = "";
+            console.log(tablica);
+        }
+        dodaj.addEventListener("click", dodajj);
+        resetuj.addEventListener("click", resett);
+        radz.addEventListener("click", porada);
+        pokaz.addEventListener("click", pokazz);
+    </script>
+</body>
+
+</html>

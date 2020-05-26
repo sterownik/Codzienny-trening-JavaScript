@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text">
+        <button>Dodaj</button>
+    </form>
+    <p></p>
+    <script>
+        var tablica = [];
+        var par = document.querySelector("p");
+        var btn = document.querySelector("button");
+        var flaga;
+        var inp = document.querySelector("input");
+        btn.addEventListener("click", function () {
+            event.preventDefault();
+            for (var i = 0; i <= tablica.length; i++) {
+                if (tablica[i] == inp.value || inp.value === "") {
+                    alert("to juz jest");
+                    return;
+                }
+            }
+            tablica.push(inp.value);
+            par.textContent += inp.value + ", ";
+            // for(name of names){
+
+            // } tyle iteracji ile namesow
+
+
+
+            inp.value = "";
+        })
+    </script>
+</body>
+
+</html>
