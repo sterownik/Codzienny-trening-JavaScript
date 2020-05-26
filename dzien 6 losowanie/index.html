@@ -29,15 +29,42 @@
 </head>
 
 <body>
-    <button>Losuj imię dziecka</button>
+    <button>
+        <!-- Losuj imię dziecka -->
+        Wygeneruj 100 róznych kodów
+    </button>
     <p>wojtek</p>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script>
         var pp = document.querySelector("p");
         var tablica = ["wojtek", "marian", "asia", "stanislaw", "marek"];
         var btn = document.querySelector("button");
+        var str = "";
         btn.addEventListener("click", function () {
-            var p = Math.floor(Math.random() * tablica.length);
-            pp.textContent = tablica[p];
+            // var p = Math.floor(Math.random() * tablica.length);
+            // // wypada do 4 bo jest razy 0.99
+            // pp.textContent = tablica[p]; do dziecka
+            str = "";
+            pp.textContent = " ";
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    var p = Math.floor(Math.random() * characters.length);
+                    var z = characters.charAt(p);
+                    str = str + '' + z;
+
+
+                }
+                str = str + '<br>';
+                $("p").html(
+                    str
+                );
+
+
+            }
+
         })
     </script>
 </body>
