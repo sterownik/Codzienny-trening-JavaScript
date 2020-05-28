@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin: 25px 0;
+}
+
+div.panel {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+div.panel img {
+    width: 25%;
+    cursor: pointer;
+}
+
+div.butt {
+    height: 70px;
+    width: 200px;
+    margin: 0 auto;
+    border: 2px solid blueviolet;
+    line-height: 70px;
+    text-align: center;
+    font-size: 30px;
+    color: blueviolet;
+    cursor: pointer;
+}
+
+div.butt:hover {
+    color: white;
+    background-color: blueviolet;
+}
+
+div.panel2 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+div.panel2 div {
+    width: 48%;
+}
+
+.title2 {
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+}
+
+.swiec {
+    border: 2px solid green;
+    box-shadow: green 0px 0px 0px 1px;
+}
+
+p {
+    text-align: center;
+}
+
+span {
+    font-weight: 700;
+}
+
+span.wynikkoniec {
+    color: red;
+    display: block;
+    margin: 20px 0;
+    font-size: 30px;
+}

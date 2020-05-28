@@ -1,15 +1,15 @@
 var papierimg = document.querySelector(".papier");
 var kamienimg = document.querySelector(".kamien");
 var nozyczkiimg = document.querySelector(".nozyczki");
-var wynikuz = document.querySelector("p.player");
-var wynikkomp = document.querySelector("p.komp");
-var gier = document.querySelector("p.gierlb");
-var wygranych = document.querySelector("p.wygranychlb");
-var przegranych = document.querySelector("p.przegranychlb");
-var przegranych = document.querySelector("p.przegranychlb");
-var remisow = document.querySelector("p.remislb");
+var wynikuz = document.querySelector(".player");
+var wynikkomp = document.querySelector(".komp");
+var gier = document.querySelector(".gierlb");
+var wygranych = document.querySelector(".wygranychlb");
+var przegranych = document.querySelector(".przegranychlb");
+
+var remisow = document.querySelector(".remislb");
 var button = document.querySelector("div.butt");
-var wynikkoniec = document.querySelector("p.wynikkoniec");
+var wynikkoniec = document.querySelector(".wynikkoniec");
 
 var cowybralgracz = 0; //odpowiednie liczby odpowiadaja papierowi kamieniowi i nozyczka
 var gry = [0, 0, 0, 0]; //tablica zawiera liczbe gier wygranych przegranych i remisow
