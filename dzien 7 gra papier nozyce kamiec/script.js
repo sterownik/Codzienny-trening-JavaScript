@@ -1,6 +1,3 @@
-var papierimg = document.querySelector(".papier");
-var kamienimg = document.querySelector(".kamien");
-var nozyczkiimg = document.querySelector(".nozyczki");
 var imgs = document.querySelectorAll(".panel img");
 var wynikuz = document.querySelector(".player");
 var wynikkomp = document.querySelector(".komp");
@@ -21,21 +18,21 @@ const gameSummary = {
     draws: 0
 }
 
-papierimg.addEventListener("click", function () {
+imgs[0].addEventListener("click", function () {
     deleteclass(); //usuwanie klasy swiecenia ze wszystkich img
     imgs[0].classList.add("swiec");
     // papierimg.classList.add("swiec"); //dodawanie klasy swiecenia
     cowybralgracz = 1; //1 to papier
     wynikuz.textContent = "papier";
 })
-kamienimg.addEventListener("click", function () {
+imgs[1].addEventListener("click", function () {
     deleteclass(); //usuwanie klasy swiecenia ze wszystkich img
     imgs[1].classList.add("swiec"); //dodawanie klasy swiecenia
     cowybralgracz = 2; //2 to kamien
     wynikuz.textContent = "kamień";
 })
 
-nozyczkiimg.addEventListener("click", function () {
+imgs[2].addEventListener("click", function () {
     deleteclass(); //usuwanie klasy swiecenia ze wszystkich img
     imgs[2].classList.add("swiec"); //dodawanie klasy swiecenia
     cowybralgracz = 3; //3 to nozyczki
@@ -65,12 +62,15 @@ const losuj = () => {
     wygranych.textContent = gameSummary.wins;
     przegranych.textContent = gameSummary.loses;
     remisow.textContent = gameSummary.draws;
-
+    deleteclass();
 
 }
 button.addEventListener("click", losuj);
 
-function deleteclass() { //usuwanie klasy swiecnia ze wszystkich img
+function deleteclass() {
+    cowybralgracz = 0;
+    wynikuz.textContent = "";
+
     imgs.forEach(function (img) {
         img.classList.remove("swiec");
     })
