@@ -1,6 +1,7 @@
 var papierimg = document.querySelector(".papier");
 var kamienimg = document.querySelector(".kamien");
 var nozyczkiimg = document.querySelector(".nozyczki");
+var imgs = document.querySelectorAll(".panel img");
 var wynikuz = document.querySelector(".player");
 var wynikkomp = document.querySelector(".komp");
 var gier = document.querySelector(".gierlb");
@@ -22,20 +23,21 @@ const gameSummary = {
 
 papierimg.addEventListener("click", function () {
     deleteclass(); //usuwanie klasy swiecenia ze wszystkich img
-    papierimg.classList.add("swiec"); //dodawanie klasy swiecenia
+    imgs[0].classList.add("swiec");
+    // papierimg.classList.add("swiec"); //dodawanie klasy swiecenia
     cowybralgracz = 1; //1 to papier
     wynikuz.textContent = "papier";
 })
 kamienimg.addEventListener("click", function () {
     deleteclass(); //usuwanie klasy swiecenia ze wszystkich img
-    kamienimg.classList.add("swiec"); //dodawanie klasy swiecenia
+    imgs[1].classList.add("swiec"); //dodawanie klasy swiecenia
     cowybralgracz = 2; //2 to kamien
     wynikuz.textContent = "kamień";
 })
 
 nozyczkiimg.addEventListener("click", function () {
     deleteclass(); //usuwanie klasy swiecenia ze wszystkich img
-    nozyczkiimg.classList.add("swiec"); //dodawanie klasy swiecenia
+    imgs[2].classList.add("swiec"); //dodawanie klasy swiecenia
     cowybralgracz = 3; //3 to nozyczki
     wynikuz.textContent = "nożyczki";
 })
@@ -69,7 +71,7 @@ const losuj = () => {
 button.addEventListener("click", losuj);
 
 function deleteclass() { //usuwanie klasy swiecnia ze wszystkich img
-    papierimg.classList.remove("swiec");
-    kamienimg.classList.remove("swiec");
-    nozyczkiimg.classList.remove("swiec");
+    imgs.forEach(function (img) {
+        img.classList.remove("swiec");
+    })
 }
