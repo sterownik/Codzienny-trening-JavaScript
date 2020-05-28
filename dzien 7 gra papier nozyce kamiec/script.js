@@ -12,7 +12,13 @@ var button = document.querySelector("div.butt");
 var wynikkoniec = document.querySelector(".wynikkoniec");
 
 var cowybralgracz = 0; //odpowiednie liczby odpowiadaja papierowi kamieniowi i nozyczka
-var gry = [0, 0, 0, 0]; //tablica zawiera liczbe gier wygranych przegranych i remisow
+//obiekt zawiera liczbe gier wygranych przegranych i remisow
+const gameSummary = {
+    numbers: 0,
+    wins: 0,
+    loses: 0,
+    draws: 0
+}
 
 papierimg.addEventListener("click", function () {
     deleteclass(); //usuwanie klasy swiecenia ze wszystkich img
@@ -38,25 +44,25 @@ const losuj = () => {
         alert("Musisz coś wybrac!");
         return; //jesli nie wybral zandje ikony to konczy funkcje
     }
-    gry[0]++; //dodaje do gry
+    gameSummary.numbers++;
     var index = Math.floor(Math.random() * 3 + 1); //losuje sposrod 1 2 3 
     var array = ["papier", "kamień", "nożyczki"]; //
     wynikkomp.textContent = array[index - 1]; //wyswietla co komputer wylosowal
     if (cowybralgracz == index) { //remis
         wynikkoniec.textContent = "Remis";
-        gry[3]++;
+        gameSummary.draws++;
 
     } else if ((cowybralgracz == 1 && index == 2) || (cowybralgracz == 2 && index == 3) || (cowybralgracz == 3 && index == 1)) { //wygrana gracza
         wynikkoniec.textContent = "TY";
-        gry[1]++;
+        gameSummary.wins++;
     } else { //wygrana komputera
         wynikkoniec.textContent = "Komputer";
-        gry[2]++;
+        gameSummary.loses++;
     }
-    gier.textContent = gry[0]; //tablica wynikow
-    wygranych.textContent = gry[1];
-    przegranych.textContent = gry[2];
-    remisow.textContent = gry[3];
+    gier.textContent = gameSummary.numbers;
+    wygranych.textContent = gameSummary.wins;
+    przegranych.textContent = gameSummary.loses;
+    remisow.textContent = gameSummary.draws;
 
 
 }
