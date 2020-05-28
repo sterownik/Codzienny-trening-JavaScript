@@ -15,7 +15,7 @@ const gameSummary = {
     numbers: 0,
     wins: 0,
     loses: 0,
-    draws: 0
+    draws: 0,
 }
 
 imgs[0].addEventListener("click", function () {
@@ -68,9 +68,8 @@ const losuj = () => {
 button.addEventListener("click", losuj);
 
 function deleteclass() {
-    cowybralgracz = 0;
-    wynikuz.textContent = "";
 
+    cowybralgracz = 0;
     imgs.forEach(function (img) {
         img.classList.remove("swiec");
     })

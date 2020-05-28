@@ -14,18 +14,19 @@ h1 {
 
 h3 {
     text-align: center;
-    margin: 25px 0;
+    margin: 20px 0;
 }
 
 div.panel {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 div.panel img {
     width: 25%;
     cursor: pointer;
+    transition: .4s;
 }
 
 div.butt {
@@ -38,6 +39,7 @@ div.butt {
     font-size: 30px;
     color: blueviolet;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 div.butt:hover {
