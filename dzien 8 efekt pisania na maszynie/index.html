@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            max-width: 80%;
+            margin: 0 auto;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div><span class="text"></span></div>
+    <script>
+        const txt =
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. ";
+        const spanik = document.querySelector("span.text");
+
+        var i = 0;
+        const indexTyping = setInterval(funkcja, 50);
+
+        function funkcja() {
+            console.log('aa');
+
+
+            spanik.textContent = spanik.textContent + txt.charAt(i);
+            if (i > txt.length) {
+                clearInterval(indexTyping);
+                // zatrztmuje interval
+            } else {
+                i++;
+            }
+        }
+    </script>
+</body>
+
+</html>
