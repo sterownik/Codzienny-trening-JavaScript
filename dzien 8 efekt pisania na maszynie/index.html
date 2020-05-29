@@ -28,17 +28,19 @@
 <body>
     <div><span class="text"></span><span class="cursor">|</span></div>
     <script>
-        const txt =
-            "Witam nazywam się";
         const txt2 =
             "Wojciech Gołda";
         const txt3 =
             "Życze miłego dnia";
+        const txt = ["Witam nazywam się", "Wojciech Gołda", "Życze miłego dnia"];
+        // tablica do rozwiazania drugiego
         const spanik = document.querySelector("span.text");
         const kursor = document.querySelector("span.cursor");
-
+        let activeLetter = 0;
+        let activeText = 0;
         var i = 0;
-        const indexTyping = setInterval(funkcja, 100);
+        // const indexTyping = setInterval(funkcja, 100);
+
         setInterval(funkcja1, 400);
         var indexTyping2, indexTyping3;
 
@@ -47,7 +49,6 @@
         }
 
         function funkcja3() {
-            console.log('wojtek');
 
             spanik.textContent = spanik.textContent + txt3.charAt(i);
             if (i === txt3.length) {
@@ -70,19 +71,42 @@
         }
 
         function funkcja() {
-            spanik.textContent = spanik.textContent + txt.charAt(i);
-            if (i === txt.length) {
-                clearInterval(indexTyping);
-                console.log('tak');
-                spanik.textContent = "";
-                i = 0;
-                indexTyping2 = setInterval(funkcja2, 100);
-                // zatrztmuje interval
-            } else {
-                i++;
 
+
+            // spanik.textContent = spanik.textContent + txt.charAt(i);
+            // if (i === txt.length) {
+            //     clearInterval(indexTyping);
+
+            //     spanik.textContent = "";
+            //     i = 0;
+            //     indexTyping2 = setInterval(funkcja2, 100);
+            //     // zatrztmuje interval
+            // } else {
+            //     i++;
+            // } pierwszy sposob
+            spanik.textContent += txt[activeText][activeLetter];
+            activeLetter++;
+            if (activeLetter === txt[activeText].length) {
+                activeText++;
+                if (activeText != txt.length) {
+
+                    return setTimeout(() => {
+                        activeLetter = 0;
+                        spanik.textContent = "";
+
+                        funkcja();
+                    }, 1000);
+                }
+                if (activeText == txt.length) {
+                    // konczy wykonywanie funkcji
+                    return;
+                }
+            } else {
+                setTimeout(funkcja, 100);
             }
+
         }
+        funkcja();
     </script>
 </body>
 
