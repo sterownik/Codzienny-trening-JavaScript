@@ -13,29 +13,74 @@
             font-size: 20px;
             letter-spacing: 2px;
         }
+
+        span.cursor {
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        span.kursorek {
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body>
-    <div><span class="text"></span></div>
+    <div><span class="text"></span><span class="cursor">|</span></div>
     <script>
         const txt =
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. ";
+            "Witam nazywam się";
+        const txt2 =
+            "Wojciech Gołda";
+        const txt3 =
+            "Życze miłego dnia";
         const spanik = document.querySelector("span.text");
+        const kursor = document.querySelector("span.cursor");
 
         var i = 0;
-        const indexTyping = setInterval(funkcja, 50);
+        const indexTyping = setInterval(funkcja, 100);
+        setInterval(funkcja1, 400);
+        var indexTyping2, indexTyping3;
+
+        function funkcja1() {
+            kursor.classList.toggle("kursorek");
+        }
+
+        function funkcja3() {
+            console.log('wojtek');
+
+            spanik.textContent = spanik.textContent + txt3.charAt(i);
+            if (i === txt3.length) {
+                clearInterval(indexTyping3);
+            } else {
+                i++;
+            }
+        }
+
+        function funkcja2() {
+            spanik.textContent = spanik.textContent + txt2.charAt(i);
+            if (i === txt2.length) {
+                clearInterval(indexTyping2);
+                spanik.textContent = "";
+                i = 0;
+                indexTyping3 = setInterval(funkcja3, 100);
+            } else {
+                i++;
+            }
+        }
 
         function funkcja() {
-            console.log('aa');
-
-
             spanik.textContent = spanik.textContent + txt.charAt(i);
-            if (i > txt.length) {
+            if (i === txt.length) {
                 clearInterval(indexTyping);
+                console.log('tak');
+                spanik.textContent = "";
+                i = 0;
+                indexTyping2 = setInterval(funkcja2, 100);
                 // zatrztmuje interval
             } else {
                 i++;
+
             }
         }
     </script>
