@@ -18,7 +18,7 @@ spaniki = [...spaniki];
 //zamiana na liste z nodelist
 
 var time = 3000;
-var i = 1;
+var i = 0;
 
 
 function usunPodswietlenie() {
@@ -36,22 +36,43 @@ function usunPodswietlenie() {
 }
 
 function zmienianie() {
-
+    if (i >= tab.length - 1) {
+        i = 0;
+    } else if (i <= -1) {
+        i = 2;
+    } else {
+        i++;
+    }
     zdjecie.src = tab[i].img;
     napis.textContent = tab[i].napis;
     usunPodswietlenie();
     spaniki[i].classList.add("active");
+}
 
-    if (i == tab.length - 1) {
-        i = 0;
-    } else {
+function zmienianieKey(evencik) {
+    clearInterval(interval);
+    if (evencik == 37) {
+        i--;
+    } else if (evencik == 39) {
         i++;
     }
-
-
-
-
+    if (i > tab.length - 1) {
+        i = 0;
+    } else if (i <= -1) {
+        i = 2;
+    }
+    zdjecie.src = tab[i].img;
+    napis.textContent = tab[i].napis;
+    usunPodswietlenie();
+    spaniki[i].classList.add("active");
+    console.log(i);
 }
 
 
-setInterval(zmienianie, time);
+
+var interval = setInterval(zmienianie, time);
+
+document.addEventListener("keydown", function (e) {
+    zmienianieKey(e.keyCode);
+    interval = setInterval(zmienianie, time);
+})
