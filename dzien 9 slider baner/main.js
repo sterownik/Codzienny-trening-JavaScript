@@ -3,6 +3,16 @@ var napis = document.querySelector("h1");
 
 var tabimg = ["images/img1.jpg", "images/img2.jpg", "images/img3.jpg"];
 var napisy = ["Pierwszy tekst", "Drugi tekst", "Trzeci tekst"];
+var tab = [{
+    img: "images/img1.jpg",
+    napis: "Pierwszy tekst"
+}, {
+    img: "images/img2.jpg",
+    napis: "Drugi tekst"
+}, {
+    img: "images/img3.jpg",
+    napis: "Trzeci tekst"
+}];
 var spaniki = document.querySelectorAll("span");
 
 var time = 3000;
@@ -15,12 +25,12 @@ function usunPodswietlenie() {
 }
 
 function zmienianie() {
-    console.log('ta');
-    zdjecie.src = tabimg[i];
-    napis.textContent = napisy[i];
+
+    zdjecie.src = tab[i].img;
+    napis.textContent = tab[i].napis;
     usunPodswietlenie();
     spaniki[i].classList.add("active");
-    if (i == tabimg.length - 1) {
+    if (i == tab.length - 1) {
         i = 0;
     } else {
         i++;
