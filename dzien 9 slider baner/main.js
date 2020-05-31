@@ -50,8 +50,12 @@ function zmienianie() {
 }
 
 function zmienianieKey(evencik) {
-    clearInterval(interval);
+
+
     // czyszczenie interwału
+
+    clearInterval(interval);
+
     if (evencik == 37) {
         i--;
         //lewo
@@ -73,6 +77,7 @@ function zmienianieKey(evencik) {
 
 
 var interval = setInterval(zmienianie, time);
+// index intewalu do tego aby zatrzymac
 
 document.addEventListener("keydown", function (e) {
     zmienianieKey(e.keyCode);
