@@ -51,10 +51,13 @@ function zmienianie() {
 
 function zmienianieKey(evencik) {
     clearInterval(interval);
+    // czyszczenie interwału
     if (evencik == 37) {
         i--;
+        //lewo
     } else if (evencik == 39) {
         i++;
+        //prawo
     }
     if (i > tab.length - 1) {
         i = 0;
@@ -65,7 +68,6 @@ function zmienianieKey(evencik) {
     napis.textContent = tab[i].napis;
     usunPodswietlenie();
     spaniki[i].classList.add("active");
-    console.log(i);
 }
 
 
