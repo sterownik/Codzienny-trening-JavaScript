@@ -14,14 +14,25 @@ var tab = [{
     napis: "Trzeci tekst"
 }];
 var spaniki = document.querySelectorAll("span");
+spaniki = [...spaniki];
+//zamiana na liste z nodelist
 
 var time = 3000;
 var i = 1;
 
+
 function usunPodswietlenie() {
-    for (var j = 0; j < spaniki.length; j++) {
-        spaniki[j].classList.remove("active");
-    }
+    // for (var j = 0; j < spaniki.length; j++) {
+    //     spaniki[j].classList.remove("active");
+    // } tez dziala
+    // spaniki.forEach((item, index) => {
+    //     spaniki[index].classList.remove("active");
+    // }) tak tez moze byc
+    var wartosc = spaniki.findIndex(spanik => spanik.classList.contains("active"));
+    spaniki[wartosc].classList.remove("active");
+    //szuka po indexach czy jest jesli tak to zwraca
+
+
 }
 
 function zmienianie() {
@@ -30,6 +41,7 @@ function zmienianie() {
     napis.textContent = tab[i].napis;
     usunPodswietlenie();
     spaniki[i].classList.add("active");
+
     if (i == tab.length - 1) {
         i = 0;
     } else {
@@ -43,6 +55,3 @@ function zmienianie() {
 
 
 setInterval(zmienianie, time);
-
-
-// zdjecie.src = tabimg[2];
