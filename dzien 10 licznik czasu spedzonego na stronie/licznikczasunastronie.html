@@ -22,18 +22,12 @@
 
             function licz2() {
                 sek++;
-                ha.textContent = sek;
-                console.log(sek);
+                ha.textContent = `przebywasz ${sek} sekund na stronie`;
             }
             return licz2;
         }
-
-        // setInterval(1000, liczydlo());
         var liczydlo = licz1();
-        setInterval(function () {
-            liczydlo();
-
-        }, 1000);
+        setInterval(liczydlo, 1000);
     </script>
 </body>
 
