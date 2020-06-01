@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const user = () => {
+            let userName = "Mieszko";
+            let userAge = 16;
+
+            function showName() {
+                console.log(`czesc ${userName}, ${userAge >= 18 ? 'mozesz kupic piwko':'nie mozesz kupic piwka'}`);
+
+            }
+            return showName;
+        }
+        const mieszko = user();
+        mieszko();
+    </script>
+</body>
+
+</html>
