@@ -5,10 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1 {
+            font-size: 40px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
+    <h1></h1>
+    <script>
+        function licz1() {
+            var ha = document.querySelector("h1");
+            var sek = 0;
 
+            function licz2() {
+                sek++;
+                ha.textContent = sek;
+                console.log(sek);
+            }
+            return licz2;
+        }
+
+        // setInterval(1000, liczydlo());
+        var liczydlo = licz1();
+        setInterval(function () {
+            liczydlo();
+
+        }, 1000);
+    </script>
 </body>
 
 </html>
