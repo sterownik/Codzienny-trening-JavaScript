@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function x() {
+        //     let number = 0;
+
+        //     function y() {
+        //         console.log(number);
+
+        //     }
+        //     return y;
+        // }
+        // const example = x();
+        // example();
+        const doliczenie = () => {
+            var number = 0;
+            return () => {
+                number++;
+                console.log(number);
+            };
+        }
+
+        const couter = doliczenie();
+        window.addEventListener("click", couter);
+    </script>
+</body>
+
+</html>
