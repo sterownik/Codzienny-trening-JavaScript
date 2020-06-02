@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Statek doleci do jowisza za</p>
+    <h1>
+        <span class="d"></span>d:
+        <span class="h"></span>h:
+        <span class="m"></span>m:
+        <span class="s"></span>s:
+    </h1>
+    <script>
+        var dzien = document.querySelector(".d");
+        var godzina = document.querySelector(".h");
+        var minut = document.querySelector(".m");
+        var sekunda = document.querySelector(".s");
+
+        function licz() {
+            var dolot = new Date("2020-06-04 23:59");
+            var dzis = new Date();
+            const one_day = 1000 * 60 * 60 * 24;
+            const one_h = 1000 * 60 * 60;
+            const one_m = 1000 * 60;
+            const one_s = 1000;
+            var zostalodni = Math.floor((dolot.getTime() - dzis.getTime()) / (one_day));
+            var zostalogodzin = (Math.floor((dolot.getTime() - dzis.getTime()) / (one_h))) % 24;
+            var zostalominut = (Math.floor((dolot.getTime() - dzis.getTime()) / (one_m))) % 60;
+            var zostalosekund = (Math.floor((dolot.getTime() - dzis.getTime()) / (one_s))) % 60;
+
+            dzien.textContent = zostalodni;
+            godzina.textContent = zostalogodzin;
+            minut.textContent = zostalominut;
+            sekunda.textContent = zostalosekund;
+        }
+        setInterval(licz, 1000);
+    </script>
+</body>
+
+</html>
