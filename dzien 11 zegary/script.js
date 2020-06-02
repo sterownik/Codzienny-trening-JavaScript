@@ -2,12 +2,13 @@ var spanik = document.querySelector("span");
 
 
 function funkcja() {
-
+    var currentdate;
 
     function funkcja2() {
-        var currentdate = new Date();
+        currentdate = new Date();
         var dateTime;
-        dateTime = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+        var sec = currentdate.getSeconds() < 10 ? '0' + currentdate.getSeconds() : currentdate.getSeconds();
+        dateTime = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + sec;
         spanik.textContent = dateTime;
     }
     return funkcja2;
