@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="start">Start</button>
+    <button class="reset">Reset</button>
+    <div class="czas">
+        <h1>
+            Czas od startu:
+            <span></span>
+        </h1>
+    </div>
+    <script>
+        var but1 = document.querySelector("button.start");
+        var but2 = document.querySelector("button.reset");
+        var czas = document.querySelector("span");
+        var flaga = true;
+        var refreshIntervalId;
+        var mil = 0;
+
+        function licz() {
+            mil++;
+            var s = Math.floor(mil / 10) % 100 < 10 ? '0' + Math.floor(mil / 10) % 100 : Math.floor(mil / 10) % 100;
+            var m = Math.floor((mil / 1000)) % 60 < 10 ? '0' + Math.floor((mil / 1000)) % 60 : Math.floor((mil /
+                1000)) % 60;
+            czas.textContent = m + ":" + s;
+        }
+        but1.addEventListener("click", function () {
+
+            if (flaga) {
+                flaga = false;
+                but1.textContent = "Reset";
+                refreshIntervalId = setInterval(licz, 1);
+                console.log(refreshIntervalId);
+            } else {
+                flaga = true;
+                but1.textContent = "Start";
+
+                clearInterval(refreshIntervalId);
+            }
+
+
+        })
+        but2.addEventListener("click", function () {
+            clearInterval(refreshIntervalId);
+            mil = 0;
+            czas.textContent = "00:00";
+
+        })
+    </script>
+</body>
+
+</html>
