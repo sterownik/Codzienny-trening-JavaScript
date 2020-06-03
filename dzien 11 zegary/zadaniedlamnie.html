@@ -13,7 +13,7 @@
     <div class="czas">
         <h1>
             Czas od startu:
-            <span></span>
+            <span>---</span>
         </h1>
     </div>
     <script>
@@ -26,9 +26,9 @@
 
         function licz() {
             mil++;
-            var s = Math.floor(mil / 10) % 100 < 10 ? '0' + Math.floor(mil / 10) % 100 : Math.floor(mil / 10) % 100;
-            var m = Math.floor((mil / 1000)) % 60 < 10 ? '0' + Math.floor((mil / 1000)) % 60 : Math.floor((mil /
-                1000)) % 60;
+            var s = Math.floor(mil) % 100 < 10 ? '0' + Math.floor(mil) % 100 : Math.floor(mil) % 100;
+            var m = Math.floor((mil / 100)) % 100 < 10 ? '0' + Math.floor((mil / 100)) % 100 : Math.floor((mil / 100)) %
+                100;
             czas.textContent = m + ":" + s;
         }
         but1.addEventListener("click", function () {
@@ -36,7 +36,7 @@
             if (flaga) {
                 flaga = false;
                 but1.textContent = "Reset";
-                refreshIntervalId = setInterval(licz, 1);
+                refreshIntervalId = setInterval(licz, 10);
                 console.log(refreshIntervalId);
             } else {
                 flaga = true;
@@ -50,7 +50,11 @@
         but2.addEventListener("click", function () {
             clearInterval(refreshIntervalId);
             mil = 0;
-            czas.textContent = "00:00";
+            czas.textContent = "---";
+            if (!flaga) {
+                flaga = true;
+                but1.textContent = "Start";
+            }
 
         })
     </script>
