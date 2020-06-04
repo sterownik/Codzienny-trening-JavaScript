@@ -22,6 +22,45 @@
         <li>Marchewka</li>
         <li>Jabłko</li>
     </ul>
+    <script>
+        const wszystkieli = document.querySelectorAll("li");
+        const ull = document.querySelector("ul");
+
+        const funkcja = (e) => {
+            const searchtext = e.target.value.toLowerCase();
+            let tab = [...wszystkieli];
+            tab = tab.filter(li => li.textContent.toLowerCase().includes(searchtext))
+            console.log(tab);
+            ull.textContent = "";
+            tab.forEach(tablica => {
+                ull.appendChild(tablica);
+            })
+
+
+        }
+
+
+        const inn = document.querySelector("input");
+
+        inn.addEventListener("input", funkcja);
+
+
+        const arr = [25, 28, 329, 2323, 23545, 3];
+        const aa = arr.filter(index =>
+            index.textContent == "r"
+            // wieksze od 25
+        );
+        console.log(aa);
+
+
+        var mapping = arr.map(number => number * 2)
+        //liczby parzyste zwroci nowa tablice z wartosciami z tamtej tablicy
+
+
+        // arr.forEach((item, index) => {
+        //     arr[index] = item * 3;
+        // })
+    </script>
 </body>
 
 </html>
