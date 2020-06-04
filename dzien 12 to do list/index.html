@@ -10,21 +10,23 @@
 <body>
     <!-- ul>li{zadanie-$}*10 -->
     <ul>
-        <li>zadanie 1</li>
-        <li>zadanie 2</li>
-        <li>zadanie 3</li>
-        <li>zadanie 4</li>
-        <li>zadanie 5</li>
-        <li>zadanie 6</li>
-        <li>zadanie 7</li>
-        <li>zadanie 8</li>
-        <li>zadanie 9</li>
-        <li>zadanie 10</li>
-        <li>zadanie 11</li>
+        <li>zadanie 1 <span>X</span></li>
+        <li>zadanie 2 <span>X</span></li>
+        <li>zadanie 3 <span>X</span></li>
+        <li>zadanie 4 <span>X</span></li>
+        <li>zadanie 5 <span>X</span></li>
+        <li>zadanie 6 <span>X</span></li>
+        <li>zadanie 7 <span>X</span></li>
+        <li>zadanie 8 <span>X</span></li>
+        <li>zadanie 9 <span>X</span></li>
+        <li>zadanie 10 <span>X</span></li>
+        <li>zadanie 11 <span>X</span></li>
     </ul>
     <script>
-        var li = document.querySelectorAll("li").forEach(item => {
-            item.addEventListener("click", function () {
+        var li = document.querySelectorAll("li").forEach((item, index) => {
+            var span = document.querySelectorAll("li span");
+            var click = span[index];
+            click.addEventListener("click", function () {
                 item.parentNode.removeChild(item);
             })
         })
