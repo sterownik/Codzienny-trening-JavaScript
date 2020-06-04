@@ -11,45 +11,55 @@
     <input type="text">
     <button class="add">Add task</button>
     <h1>Liczba zadan <span></span></h1>
-    <ul></ul>
+    <ul>
+
+    </ul>
     <script>
+        const toDoList = [];
         var addbtn = document.querySelector(".add");
         var inn = document.querySelector("input");
         var spanik = document.querySelector("span");
         var ull = document.querySelector("ul");
-        var task;
-        var li = document.querySelectorAll("li");
+
+        var i = 0;
+
+        var listItems = document.querySelectorAll("li task");
+
+        spanik.textContent = i;
+        const removeTask = (e) => {
+            e.target.parentNode.remove();
+            const liczba = document.querySelectorAll("li").length;
+            spanik.textContent = liczba;
+        }
 
 
         const dodaj = () => {
-            console.log(inn.value);
-            var li = document.createElement("li");
-            var btn = document.createElement("button");
-            btn.appendChild(document.createTextNode("Usuń"));
-            li.appendChild(document.createTextNode(inn.value));
-            li.appendChild(btn);
-            ull.appendChild(li);
-            inn.value = "";
-            li = document.querySelectorAll("li");
-            console.log(li);
-            li.forEach((item, index) => {
-                console.log("usun");
-                var span = document.querySelectorAll("li button");
-                var click = span[index];
-                click.addEventListener("click", function () {
-                    // item.parentNode.removeChild(item);
-                    item.style.textDecoration = "line-through";
-                    click.remove();
+            if (inn.value != "") {
+                var task = document.createElement("li");
+                task.className = 'task';
+                var btn = document.createElement("button");
+                btn.appendChild(document.createTextNode("Usuń"));
+                task.appendChild(document.createTextNode(inn.value));
+                task.appendChild(btn);
+                ull.appendChild(task);
+                toDoList.push(task);
+                inn.value = "";
 
-
-
-
-
-
-                })
-            })
+                const liczba = document.querySelectorAll("li").length;
+                spanik.textContent = liczba;
+                task.querySelector("button").addEventListener("click", removeTask);
+                // szukamy buttona w tasku moze byc
+                // document.querySelector("li:last-child button").addEventListener("click", removeTask); szuka ostatniego i tam ma dodac sluchacza
+            }
 
         }
+        var lie = document.getElementsByClassName("task");
+        //na zywo getElementByClassname
+
+
+
+
+
 
         addbtn.addEventListener("click", dodaj);
     </script>
