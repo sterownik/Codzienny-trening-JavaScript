@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button class="add">Add task</button>
+    <h1>Liczba zadan <span></span></h1>
+    <ul></ul>
+    <script>
+        var addbtn = document.querySelector(".add");
+        var inn = document.querySelector("input");
+        var spanik = document.querySelector("span");
+        var ull = document.querySelector("ul");
+        var task;
+        var li = document.querySelectorAll("li");
+
+
+        const dodaj = () => {
+            console.log(inn.value);
+            var li = document.createElement("li");
+            var btn = document.createElement("button");
+            btn.appendChild(document.createTextNode("Usuń"));
+            li.appendChild(document.createTextNode(inn.value));
+            li.appendChild(btn);
+            ull.appendChild(li);
+            inn.value = "";
+            li = document.querySelectorAll("li");
+            console.log(li);
+            li.forEach((item, index) => {
+                console.log("usun");
+                var span = document.querySelectorAll("li button");
+                var click = span[index];
+                click.addEventListener("click", function () {
+                    // item.parentNode.removeChild(item);
+                    item.style.textDecoration = "line-through";
+                    click.remove();
+
+
+
+
+
+
+                })
+            })
+
+        }
+
+        addbtn.addEventListener("click", dodaj);
+    </script>
+</body>
+
+</html>
