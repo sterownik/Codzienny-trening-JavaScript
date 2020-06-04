@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projektu to do app</title>
 </head>
 
 <body>
+    <!-- ul>li{zadanie-$}*10 -->
     <ul>
         <li>zadanie 1</li>
         <li>zadanie 2</li>
@@ -21,6 +22,13 @@
         <li>zadanie 10</li>
         <li>zadanie 11</li>
     </ul>
+    <script>
+        var li = document.querySelectorAll("li").forEach(item => {
+            item.addEventListener("click", function () {
+                item.parentNode.removeChild(item);
+            })
+        })
+    </script>
 </body>
 
 </html>
