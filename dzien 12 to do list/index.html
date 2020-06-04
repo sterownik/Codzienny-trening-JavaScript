@@ -10,26 +10,35 @@
 <body>
     <!-- ul>li{zadanie-$}*10 -->
     <ul>
-        <li>zadanie 1 <span>X</span></li>
-        <li>zadanie 2 <span>X</span></li>
-        <li>zadanie 3 <span>X</span></li>
-        <li>zadanie 4 <span>X</span></li>
-        <li>zadanie 5 <span>X</span></li>
-        <li>zadanie 6 <span>X</span></li>
-        <li>zadanie 7 <span>X</span></li>
-        <li>zadanie 8 <span>X</span></li>
-        <li>zadanie 9 <span>X</span></li>
-        <li>zadanie 10 <span>X</span></li>
-        <li>zadanie 11 <span>X</span></li>
+        <li data-key="1">zadanie 1
+            <button>x</button data-key="1"></li>
+        <li data-key="2">zadanie 2 <button data-key="2">x</button></li>
+        <li data-key="3">zadanie 3 <button data-key="3">x</button></li>
+        <li data-key="4">zadanie 4 <button data-key="4">x</button></li>
+        <li data-key="5">zadanie 5 <button data-key="5">x</button></li>
+        <li data-key="6">zadanie 6 <button data-key="6">x</button></li>
+        <li data-key="7">zadanie 7 <button data-key="7">x</button></li>
+        <li data-key="8">zadanie 8 <button data-key="8">x</button></li>
+        <li data-key="9">zadanie 9 <button data-key="9">x</button></li>
+        <li data-key="10">zadanie 10 <button data-key="10">x</button></li>
+        <li data-key="11">zadanie 11 <button data-key="11">x</button></li>
     </ul>
     <script>
+        //parentNode zwraca co jest rodzicem
         var li = document.querySelectorAll("li").forEach((item, index) => {
-            var span = document.querySelectorAll("li span");
+            var span = document.querySelectorAll("li button");
             var click = span[index];
             click.addEventListener("click", function () {
-                item.parentNode.removeChild(item);
+                // item.parentNode.removeChild(item);
+                item.style.textDecoration = "line-through";
+                click.remove();
+                const inn = item.dataset.key;
+                console.log(inn);
+                document.querySelector(`li[data-key="${inn}"]`).remove(); //inny sposob z date-key
+
             })
         })
+        // drugi sposob
     </script>
 </body>
 
