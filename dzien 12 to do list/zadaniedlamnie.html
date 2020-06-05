@@ -21,22 +21,23 @@
         var spanik = document.querySelector("span");
         var ull = document.querySelector("ul");
         const remove = (e) => {
-            event.target.parentNode.remove();
-            var lb = document.getElementsByClassName("task").length;
-            spanik.textContent = lb;
             const index = e.target.parentNode.id;
-            console.log(index);
-
             wszystkieli.splice(index, 1);
+            // usuwanie elementu o indexie
             ull.textContent = "";
+
             wszystkieli.forEach((task1, index) => {
                 task1.id = index;
                 ull.appendChild(task1);
-
             })
+            //od nowa nadajemy indexy
+
+            var lb = document.getElementsByClassName("task").length;
+            spanik.textContent = lb;
         }
         const dodaj = () => {
             if (taskinput.value != "") {
+
                 var task = document.createElement("li");
                 task.className = "task";
                 var button = document.createElement("button");
@@ -48,43 +49,37 @@
                 var lb = document.getElementsByClassName("task").length;
                 spanik.textContent = lb;
                 taskinput.value = "";
-
-                console.log(wszystkieli);
                 wszystkieli.push(task);
-
-
                 ull.textContent = "";
+
                 wszystkieli.forEach((task1, index) => {
                     task1.id = index;
                     ull.appendChild(task1);
 
                 })
+                //nadajemy indexy
 
 
 
             }
         }
         const fun = (e) => {
-
-
             ull.textContent = "";
             console.log(wszystkieli);
             var searchtext = e.target.value.toLowerCase();
-            let tab = [...wszystkieli];
-            tab = tab.filter(lii => lii.textContent.includes(searchtext))
-            // console.log(tab);
 
             wszystkieli.forEach((task1, index) => {
                 if (task1.textContent.includes(searchtext)) {
                     task1.id = index;
                     ull.appendChild(task1);
                 }
+                //szukanie czy text zawiera
 
 
             })
         }
-
         szukajinput.addEventListener("input", fun);
+
         dodajtask.addEventListener("click", dodaj);
     </script>
 </body>
