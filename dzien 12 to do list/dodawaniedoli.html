@@ -30,7 +30,19 @@
             e.target.parentNode.remove();
             const liczba = document.querySelectorAll("li").length;
             spanik.textContent = liczba;
+            const index = e.target.parentNode.id;
+            console.log(index);
+
+            toDoList.splice(index, 1);
+            // usuwanie z tablicy pom indeksie i ile
+            ull.textContent = "";
+            toDoList.forEach((task1, index) => {
+                task1.id = index;
+                ull.appendChild(task1);
+
+            })
         }
+
 
 
         const dodaj = () => {
@@ -41,8 +53,14 @@
                 btn.appendChild(document.createTextNode("Usuń"));
                 task.appendChild(document.createTextNode(inn.value));
                 task.appendChild(btn);
-                ull.appendChild(task);
+                // ull.appendChild(task);
                 toDoList.push(task);
+                ull.textContent = "";
+                toDoList.forEach((task1, index) => {
+                    task1.id = index;
+                    ull.appendChild(task1);
+
+                })
                 inn.value = "";
 
                 const liczba = document.querySelectorAll("li").length;

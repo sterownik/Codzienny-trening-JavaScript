@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input class="wpisz" type="text">
+    <button class="add">Dodaj</button>
+    <input class="szukaj" type="text">
+    <h1>Masz <span></span> tasków</h1>
+    <ul></ul>
+    <script>
+        var wszystkieli = [];
+        var taskinput = document.querySelector(".wpisz");
+        var dodajtask = document.querySelector("button.add");
+        var szukajinput = document.querySelector(".szukaj");
+        var spanik = document.querySelector("span");
+        var ull = document.querySelector("ul");
+        const remove = (e) => {
+            event.target.parentNode.remove();
+            var lb = document.getElementsByClassName("task").length;
+            spanik.textContent = lb;
+            const index = e.target.parentNode.id;
+            console.log(index);
+
+            wszystkieli.splice(index, 1);
+            ull.textContent = "";
+            wszystkieli.forEach((task1, index) => {
+                task1.id = index;
+                ull.appendChild(task1);
+
+            })
+        }
+        const dodaj = () => {
+            if (taskinput.value != "") {
+                var task = document.createElement("li");
+                task.className = "task";
+                var button = document.createElement("button");
+                button.appendChild(document.createTextNode("usun"));
+                task.appendChild(document.createTextNode(taskinput.value));
+                task.appendChild(button);
+                ull.appendChild(task);
+                task.querySelector("button").addEventListener("click", remove);
+                var lb = document.getElementsByClassName("task").length;
+                spanik.textContent = lb;
+                taskinput.value = "";
+
+                console.log(wszystkieli);
+                wszystkieli.push(task);
+
+
+                ull.textContent = "";
+                wszystkieli.forEach((task1, index) => {
+                    task1.id = index;
+                    ull.appendChild(task1);
+
+                })
+
+
+
+            }
+        }
+        const fun = (e) => {
+
+
+            ull.textContent = "";
+            console.log(wszystkieli);
+            var searchtext = e.target.value.toLowerCase();
+            let tab = [...wszystkieli];
+            tab = tab.filter(lii => lii.textContent.includes(searchtext))
+            // console.log(tab);
+
+            wszystkieli.forEach((task1, index) => {
+                if (task1.textContent.includes(searchtext)) {
+                    task1.id = index;
+                    ull.appendChild(task1);
+                }
+
+
+            })
+        }
+
+        szukajinput.addEventListener("input", fun);
+        dodajtask.addEventListener("click", dodaj);
+    </script>
+</body>
+
+</html>
