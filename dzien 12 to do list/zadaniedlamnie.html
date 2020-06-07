@@ -20,6 +20,7 @@
         var szukajinput = document.querySelector(".szukaj");
         var spanik = document.querySelector("span");
         var ull = document.querySelector("ul");
+
         const remove = (e) => {
             const index = e.target.parentNode.id;
             wszystkieli.splice(index, 1);
@@ -63,6 +64,7 @@
 
             }
         }
+        //funkcja do szukania
         const fun = (e) => {
             ull.textContent = "";
             console.log(wszystkieli);
