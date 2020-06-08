@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Animal = function (name) {
+            this.name = name;
+            this.children = [];
+            this.addChildren = function (childname) {
+                this.children.push(childname);
+            }
+        }
+
+        //prottop
+
+        Animal.prototype.addChildren = function (childname) {
+            this.children.push(childname);
+        }
+        Animal.prototype.age = 2; //wszystkie instancje beda mialy dostep do age wlasciowosi w instancji
+        const hamster = new Animal('bobik');
+        hamster.addChildren("romus");
+        // klasa
+        class Animal {
+            constructor(name, species) {
+                this.name = name;
+                this.species = species;
+                this.eat = function () {
+                    console.log(this.name + "mniam");
+
+                }
+
+            }
+            eat() {
+                console.log(this.name + 'asa'); //do prototypu jest dodawana funkcja
+
+            }
+        }
+    </script>
+</body>
+
+</html>
