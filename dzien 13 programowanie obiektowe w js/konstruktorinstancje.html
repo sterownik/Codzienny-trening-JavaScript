@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Car = function (name) {
+            console.log(this);
+            this.name = name;
+        }
+        //tak samo
+        // function Car() {
+
+        // }
+
+        const maluch = new Car("maluch");
+        const polonez = new Car("polonez");
+
+        //nowy pusty obiekt
+        //wiazanie z utworzonym obiektem
+        //powstaje wlasciowosc _proto_
+        //wywolanie funkcji ma nowym obiekcie
+
+        maluch.name = "kaskader";
+    </script>
+</body>
+
+</html>

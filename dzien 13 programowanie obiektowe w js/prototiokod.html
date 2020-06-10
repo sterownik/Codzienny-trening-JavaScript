@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Person = function (name, age) {
+            this.name = name;
+            this.age = age;
+            this.children = [];
+            // this.addChildren = function (name) {
+            //     this.children.push(name);
+            // }
+        }
+        Person.prototype.addChildren = function (name) {
+            this.children.push(name);
+        }
+        const arek = new Person("Arek", 20);
+        const wojtek = new Person("wojtek", 22);
+        arek.addChildren("tomek");
+        arek.addChildren("marian");
+        console.log(arek.children);
+    </script>
+</body>
+
+</html>
