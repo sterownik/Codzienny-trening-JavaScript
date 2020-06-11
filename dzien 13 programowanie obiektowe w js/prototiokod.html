@@ -9,22 +9,56 @@
 
 <body>
     <script>
-        const Person = function (name, age) {
-            this.name = name;
-            this.age = age;
-            this.children = [];
-            // this.addChildren = function (name) {
-            //     this.children.push(name);
+        // const Person = function (name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.children = [];
+        //     // this.addChildren = function (name) {
+        //     //     this.children.push(name);
+        //     // }
+        // }
+        // Person.prototype.addChildren = function (name) {
+        //     this.children.push(name);
+        // }
+        // const arek = new Person("Arek", 20);
+        // const wojtek = new Person("wojtek", 22);
+        // arek.addChildren("tomek");
+        // arek.addChildren("marian");
+        // console.log(arek.children);
+
+        //prototyp to obiekt w funkcji kontruktora kazdy egzemparz ma dostep do obiektu prototypu
+        function Player() {
+
+        }
+        class User {
+
+        }
+        Player.prototype.age = 20;
+        const janek = new Player;
+        const marta = new User;
+        //wskazuje na klase'
+
+        const darek = new janek.constructor();
+
+        //dodawanie elementow do prototypu
+        function Citizen(country, citizenship) {
+            this.citizenship = citizenship;
+            this.country = country;
+            // this.changeCIIty = function (newCity) {
+            //     this.citizenship = newCity;
+            //     console.log('zmiana za pomoca metody w instracji na ' + newCity);
+            //     //kazdy stworzony obiekt ma ta metode
             // }
+
         }
-        Person.prototype.addChildren = function (name) {
-            this.children.push(name);
+        //za pomoca prototypu
+        Citizen.prototype.changecity = function (city) {
+            this.citizenship = city;
         }
-        const arek = new Person("Arek", 20);
-        const wojtek = new Person("wojtek", 22);
-        arek.addChildren("tomek");
-        arek.addChildren("marian");
-        console.log(arek.children);
+
+        const zenek = new Citizen("polska", "Polskie");
+        zenek.changecity("Wlochy");
+        // zenek.changeCIIty("madryt");
     </script>
 </body>
 
