@@ -55,10 +55,19 @@
         Citizen.prototype.changecity = function (city) {
             this.citizenship = city;
         }
-
+        //wywoluje sie to w instancji a nie w prototypie na poczatku sa przeszukiwane te w obiekcie
         const zenek = new Citizen("polska", "Polskie");
         zenek.changecity("Wlochy");
         // zenek.changeCIIty("madryt");
+
+
+
+        //rozszerzanie
+        const arr = [5, 6, 7, 8];
+        Array.prototype.delete = function (index) {
+            return this.splice(index, 1);
+        }
+        arr.delete(1);
     </script>
 </body>
 
