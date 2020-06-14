@@ -71,6 +71,15 @@
 
 
         arr.__proto__; //protopty konstruktora bo to tablica
+        arr.__proto__.__proto__.__proto__; //lancuch
+        Object.prototype.age = 20; //na koncu lancucha jest 20 wiec bierze
+        zenek.__proto__; //do konstruktora
+
+        arr instanceof Object //jest instacja obiekt
+
+        zenek instanceof Citizen //jestb instancja
+
+        Object.getPrototypeOf(arr) //prototyp konstruktora
     </script>
 </body>
 
