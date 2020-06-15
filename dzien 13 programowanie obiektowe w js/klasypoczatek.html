@@ -54,9 +54,17 @@
                 //this tego aktualnego obiektu
                 this.members++;
             }
+
+            //tylko poprzez Familyy1 tylko poprzez ta klase
+            static makeFamily(...memberss) {
+                return memberss;
+            }
         }
         const rodzinka = new Familyy1(3, 'jan', 'ewa', 'adam');
         rodzinka.addMembers("wojtek");
+
+        const kwiatkowscy = new Familyy1(1, "piotr");
+        kwiatkowscy.addMembers("ola");
 
 
         // const Family2 = function (name) {
