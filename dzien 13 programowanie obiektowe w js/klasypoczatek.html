@@ -13,20 +13,59 @@
         class Family {
             constructor(name) {
                 this.name = name;
+                this.addMember = function () {
+                    console.log('obietk');
+
+                }
+                //jesli chcielbysmy zeby byla w kazdej instancji
             }
             addMember() {
+                console.log('proto');
 
             }
         }
         const nowakowie = new Family("nowakowie");
+        nowakowie.addMember();
 
-        const Family2 = function (name) {
-            this.name = name;
-        }
-        Family2.prototype.addMember = function () {
+        const Family2 = function () {
 
         }
-        const kowalscy = new Family2("kowalscy");
+
+        function Family3() {
+
+        }
+
+        class Family4 {
+
+        }
+        const Family5 = class {
+
+        }
+
+
+        class Familyy1 {
+            //parametr rest odczyta wszystkie co wpisze i da do tablicy
+            constructor(members, ...names) {
+                this.members = members;
+                this.names = names; //zostanie przekazan tablica
+            }
+            addMembers(newMember) {
+                this.names.push(newMember);
+                //this tego aktualnego obiektu
+                this.members++;
+            }
+        }
+        const rodzinka = new Familyy1(3, 'jan', 'ewa', 'adam');
+        rodzinka.addMembers("wojtek");
+
+
+        // const Family2 = function (name) {
+        //     this.name = name;
+        // }
+        // Family2.prototype.addMember = function () {
+
+        // }
+        // const kowalscy = new Family2("kowalscy");
     </script>
 </body>
 
