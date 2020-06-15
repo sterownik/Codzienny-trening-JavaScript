@@ -83,6 +83,20 @@
 
         const janusz = new Citizen();
         // janusz.__proto__ = Citizen.prototype to juz ma
+        function cyk() {
+            console.log('2');
+            setTimeout(function () {
+                console.log('1');
+
+            }, 1000)
+            setTimeout(function () {
+                console.log('3');
+
+            }, 0)
+            console.log('4');
+
+        }
+        cyk();
     </script>
 </body>
 

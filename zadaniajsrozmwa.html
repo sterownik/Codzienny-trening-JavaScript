@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function cyk() {
+            console.log('2');
+            setTimeout(function () {
+                console.log('1');
+
+            }, 1000)
+            setTimeout(function () {
+                console.log('3');
+
+            }, 0)
+            console.log('4');
+
+        }
+        cyk();
+        var tab1 = ['b', 'a', 'c'];
+        var tab2 = ['c', 'b', 'a'];
+        console.log(tab1.sort() === tab1);
+        console.log(tab1.sort() === tab2.sort());
+        console.log(tab1.sort() == tab1);
+    </script>
+</body>
+
+</html>
