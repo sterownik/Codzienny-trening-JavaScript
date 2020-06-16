@@ -10,8 +10,9 @@
 <body>
     <script>
         class Animal {
-            constructor(age) {
+            constructor(age, name) {
                 this.age = age;
+                this.name = name;
             }
             breathe() {
                 console.log('zwierze oddycha');
@@ -19,15 +20,17 @@
             }
         }
 
-        const zwierze = new Animal(20);
+        const zwierze = new Animal(20, "artek");
 
         class Mammal extends Animal {
-            constructor(wiek) {
-                super(wiek); //wywolal konstruktor z animal
+            constructor(wiek, hairs, name) {
+                super(wiek,
+                name); //wywolal konstruktor z animal czyli nadrzednej super na poczatku z nadrzednej tak jakby constructor
+                this.hairs = hairs; //nowe
             }
         }
         //wywowalnie konstruktora z animal
-        const ssak = new Mammal(3);
+        const ssak = new Mammal(3, "czarne", 'max');
     </script>
 </body>
 
