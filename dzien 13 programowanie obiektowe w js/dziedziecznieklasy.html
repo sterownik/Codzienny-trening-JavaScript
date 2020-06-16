@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            constructor(age) {
+                this.age = age;
+            }
+            breathe() {
+                console.log('zwierze oddycha');
+
+            }
+        }
+
+        const zwierze = new Animal(20);
+
+        class Mammal extends Animal {
+            constructor(wiek) {
+                super(wiek); //wywolal konstruktor z animal
+            }
+        }
+        //wywowalnie konstruktora z animal
+        const ssak = new Mammal(3);
+    </script>
+</body>
+
+</html>
