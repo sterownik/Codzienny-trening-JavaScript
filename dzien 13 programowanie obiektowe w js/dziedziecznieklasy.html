@@ -25,12 +25,27 @@
         class Mammal extends Animal {
             constructor(wiek, hairs, name) {
                 super(wiek,
-                name); //wywolal konstruktor z animal czyli nadrzednej super na poczatku z nadrzednej tak jakby constructor
+                    name
+                ); //wywolal konstruktor z animal czyli nadrzednej super na poczatku z nadrzednej tak jakby constructor
                 this.hairs = hairs; //nowe
+            }
+            drinkMilk() {
+                console.log('pijo');
+
             }
         }
         //wywowalnie konstruktora z animal
         const ssak = new Mammal(3, "czarne", 'max');
+        ssak.breathe();
+        ssak.drinkMilk();
+
+        class Human extends Mammal {
+            constructor(age, name, hairs, language) {
+                //idzie do mamal mamal do animal
+                super(age, name, hairs);
+                this.language = language;
+            }
+        }
     </script>
 </body>
 
