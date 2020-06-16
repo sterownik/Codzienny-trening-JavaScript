@@ -33,6 +33,9 @@
                 console.log('pijo');
 
             }
+            speak() {
+                console.log(' ssak mowi');
+            }
         }
         //wywowalnie konstruktora z animal
         const ssak = new Mammal(3, "czarne", 'max');
@@ -45,7 +48,13 @@
                 super(age, name, hairs);
                 this.language = language;
             }
+            speak() {
+                console.log(' czlowiek mowi');
+            }
         }
+
+        const czlowiek = new Human(20, "wojtek", 'blond', 'angielski by chcial');
+        czlowiek.speak(); //idzie do swojego prototypu klasy
     </script>
 </body>
 
