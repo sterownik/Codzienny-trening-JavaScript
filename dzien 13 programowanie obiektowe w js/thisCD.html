@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 'use strict'
+        //tryb scisly
+        //this do obiektu
+
+        function showName() {
+
+            // console.log(this.name);
+
+            console.log(this.name);
+
+        }
+
+        const karol = {
+            name: 'karol',
+            showName: showName
+        }
+        const tatiana = {
+            name: 'tatiana',
+            showName: showName
+        }
+
+        // karol.showName();
+        // tatiana.showName();
+
+
+        function one() {
+            this.name = "pierwsza";
+            return this.name;
+        }
+
+        const object1 = {
+            two: one,
+            //funkcja z one()
+            //po swtorzenie i wywolaniu nie bedzie bledu
+            four: function () {
+                console.log(this);
+
+            }
+        }
+
+        const three = object1.two;
+        three();
+
+        const five = object1.four;
+    </script>
+</body>
+
+</html>
