@@ -9,7 +9,15 @@
 
 <body>
     <script>
+        'use strict'
+        //nie pozwoli this w funkcji
+        // this globalny
 
+        const fn = function () {
+            console.log(this.exmaple);
+
+        }
+        fn();
     </script>
 </body>
 
