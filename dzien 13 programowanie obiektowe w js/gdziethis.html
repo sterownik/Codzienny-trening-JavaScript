@@ -10,14 +10,36 @@
 <body>
     <script>
         'use strict'
-        //nie pozwoli this w funkcji
+        //nie pozwoli this w funkcji do nauki
         // this globalny
 
         const fn = function () {
-            console.log(this.exmaple);
+            console.log(this.name); //this nie stanie sie ta funkcja stanie sie kontekstem
 
         }
-        fn();
+        // fn();
+
+        const obj = {
+            name: "adam",
+            showName: fn
+        }
+        // fn();
+        const fun = fn;
+        // fun(); //
+        obj.showName(); //wazny jest kontekst w jakim wywolujemy wywolujemy ja na obiekcie
+
+        const outside = obj.showName;
+        // outside();
+
+        document.addEventListener('click', function () {
+            console.log(this);
+            const inside = function () {
+                console.log(this); //wewnetrzne funkcje zerwanie dziedziczenia
+
+            }
+            inside();
+
+        })
     </script>
 </body>
 
