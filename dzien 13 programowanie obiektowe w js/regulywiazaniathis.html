@@ -32,7 +32,7 @@
         //         //taki jak pierwszy inny sposob
         //     }
         // }
-        // user.showName2(); //wiazanie nie jawne w momencie wywolania
+        // user.showName2(); //wiazanie NIE JAWNE w momencie wywolania
         // const stefan = {
         //     age: 20,
         //     showName: user.showName
@@ -42,15 +42,22 @@
         const human = {
             pesel: 020202020202,
         }
-        const showPesel = function () {
-            console.log(`twoj pesel to ${this.pesel}`);
+        const showPesel = function (name) {
+            console.log(`twoj pesel to ${this.pesel} a imie ${name}`);
 
         }
         // showPesel();
 
         showPesel.call(
-            human
-            ); //wywolujemy na show pesel metode call ustawia this na pierwszy elemney i wywoluje ta funkcje funkcja.call(obiekt)
+            human, "wojtek"
+        ); // pierwszy argument to obiekt wywolujemy na show pesel metode call ustawia this czym ma byc this na pierwszy elemney i wywoluje ta funkcje ->funkcja.call(obiekt) JAWNE wiazanie
+
+        //WIAZANIE TWARDE
+        showPesel.bind(human); //nie wywoluje
+
+        const showPeselUser = showPesel.bind(human); //na stale przypisuje this humana
+
+        showPeselUser();
     </script>
 </body>
 
