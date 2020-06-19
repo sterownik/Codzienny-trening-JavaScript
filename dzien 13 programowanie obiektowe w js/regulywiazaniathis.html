@@ -58,6 +58,35 @@
         const showPeselUser = showPesel.bind(human); //na stale przypisuje this humana
 
         showPeselUser();
+
+
+        //wiazanie z operatrormen NEW
+
+        class User {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+        const stasiek = new User("stasiek");
+
+
+
+        //arrow wiazanie nie tworzy wlasnego this podczas wywolania ona je dziedziczy
+
+
+        const user = {
+            age: 33,
+            showAGE() {
+                console.log(this.age);
+
+            },
+            showAGE2: () => {
+                console.log(this.age);
+                //undefinded bo dziedziczy
+            }
+        }
+        user.showAGE();
+        user.showAGE2();
     </script>
 </body>
 
