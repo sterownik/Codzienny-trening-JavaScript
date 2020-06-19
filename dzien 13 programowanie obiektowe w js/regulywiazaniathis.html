@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const thisExample = function () {
+        //     console.log(this.example);
+        //     //wiazanie domyslne jesli 'use strict' to blad
+
+        //     const inside = function () {
+        //         console.log(this.example);
+
+        //     }
+        //     inside();
+        // }
+        // thisExample();
+
+        const user = {
+            age: 45,
+            showName() {
+                console.log(this.age);
+
+            },
+            showName2: function () {
+                console.log(this.age);
+
+            }
+        }
+        user.showName(); //wiazanie nie jawne w momencie wywolania
+        const stefan = {
+            age: 20,
+            showName: user.showName
+        }
+        stefan.showName();
+    </script>
+</body>
+
+</html>
