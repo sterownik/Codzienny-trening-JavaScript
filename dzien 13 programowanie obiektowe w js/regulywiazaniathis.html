@@ -21,23 +21,36 @@
         // }
         // thisExample();
 
-        const user = {
-            age: 45,
-            showName() {
-                console.log(this.age);
+        // const user = {
+        //     age: 45,
+        //     showName() {
+        //         console.log(this.age);
 
-            },
-            showName2: function () {
-                console.log(this.age);
+        //     },
+        //     showName2: function () {
+        //         console.log(this.age);
+        //         //taki jak pierwszy inny sposob
+        //     }
+        // }
+        // user.showName2(); //wiazanie nie jawne w momencie wywolania
+        // const stefan = {
+        //     age: 20,
+        //     showName: user.showName
+        // }
+        // stefan.showName();
 
-            }
+        const human = {
+            pesel: 020202020202,
         }
-        user.showName(); //wiazanie nie jawne w momencie wywolania
-        const stefan = {
-            age: 20,
-            showName: user.showName
+        const showPesel = function () {
+            console.log(`twoj pesel to ${this.pesel}`);
+
         }
-        stefan.showName();
+        // showPesel();
+
+        showPesel.call(
+            human
+            ); //wywolujemy na show pesel metode call ustawia this na pierwszy elemney i wywoluje ta funkcje funkcja.call(obiekt)
     </script>
 </body>
 
