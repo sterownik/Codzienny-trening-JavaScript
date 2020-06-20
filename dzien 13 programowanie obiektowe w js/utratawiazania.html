@@ -19,15 +19,52 @@
         //     }
         // }
 
-        //rozwiazanie that = this;
+        //rozwiazanie 1 that = this;
+        // const szarik = {
+        //     children: ['fafik', 'zaba'],
+        //     showChildren: function () {
+        //         const that = this; //na tym etapie prawidlowy this wiec go przekazujemy
+        //         this.children.forEach(function (child, index) {
+        //             console.log(that.children[index]); //traci wiazanie ale dajemy go na that
+        //             // console.log(s);
+        //         })
+        //     }
+        // }
+
+
+        //rozwiazanie 2 petla for of
+        // const szarik = {
+        //     children: ['fafik', 'zaba'],
+        //     showChildren: function () {
+        //         for (child of this.children) {
+        //             console.log(child);
+        //             //petla nie tworzy nowego kontekstu czyli thisa
+        //         }
+
+        //     }
+        // }
+
+        //strzalkowa rozwiazanie 3
+        // const szarik = {
+        //     children: ['fafik', 'zaba'],
+        //     showChildren: function () {
+
+        //         this.children.forEach((child, index) => {
+        //             console.log(this.children[index]); //funkcja strzalkowa nie tworzy this 
+        //         })
+        //     }
+        // }
+
+
+        //bind rozwiazanie 4
         const szarik = {
             children: ['fafik', 'zaba'],
             showChildren: function () {
-                const that = this;
+
                 this.children.forEach(function (child, index) {
-                    console.log(that.children[index]); //traci wiazanie
-                    // console.log(s);
-                })
+                        console.log(this.children[index]);
+                    }.bind(
+                    this)) //pprzekazujemy obiekt na ktorym chcemy pracowac na stale laczymy this z elemenetem
             }
         }
         szarik.showChildren();
