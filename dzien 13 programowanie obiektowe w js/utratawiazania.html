@@ -9,12 +9,24 @@
 
 <body>
     <script>
+        // const szarik = {
+        //     children: ['fafik', 'zaba'],
+        //     showChildren: function () {
+        //         this.children.forEach(function (child, index) {
+        //             console.log(this.children[index]);//traci wiazanie this jest niezrozumialy bierze window
+        //             // console.log(s);
+        //         })
+        //     }
+        // }
+
+        //rozwiazanie that = this;
         const szarik = {
             children: ['fafik', 'zaba'],
             showChildren: function () {
+                const that = this;
                 this.children.forEach(function (child, index) {
-                    console.log(this.children[index]);
-                    // console.log(this);
+                    console.log(that.children[index]); //traci wiazanie
+                    // console.log(s);
                 })
             }
         }
