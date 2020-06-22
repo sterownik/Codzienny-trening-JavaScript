@@ -37,14 +37,43 @@
         class Dog {
             constructor(name, dogColor) {
                 this.name = name;
-                let color = dogColor;
+                let color =
+                    dogColor; //nie istenie tutaj ale w funkcji istnieje dzieki ze mamy interfejs to mozemy zmieniac i odczytywac
                 this.getColor = () => {
                     return color;
                 }
+                this.setColor = (value) => color = value;
 
             }
         }
         const fafik = new Dog("fafik", "brazowy");
+        fafik.setColor("musztardowy");
+
+
+        class Car {
+            constructor(name, counter = 10000, year = 1993) {
+                this.name = name;
+                let _counter = counter;
+                let _year = year;
+                let _changeNumber = 0;
+
+                //trzeba robic w konstruktorze
+                this.getCounter = () => _counter;
+                this.setCounter = (value) => _counter = value;
+
+
+                this.getYear = () => _year;
+                this.setYear = (val) =>
+                    _year = val;
+
+
+                this.getChange = () =>
+                    _changeNumber;
+                this.setChange = (val) =>
+                    _changeNumber = val;
+            }
+        }
+        const polonez = new Car("polonez", 20000, 2000);
     </script>
 </body>
 
