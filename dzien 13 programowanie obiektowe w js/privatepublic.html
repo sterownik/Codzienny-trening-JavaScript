@@ -59,7 +59,12 @@
 
                 //trzeba robic w konstruktorze
                 this.getCounter = () => _counter;
-                this.setCounter = (value) => _counter = value;
+                // this.setCounter = (value) => 
+
+                this.setCounter = function (value) {
+                    _changeNumber++;
+                    _counter = value;
+                }
 
 
                 this.getYear = () => _year;
