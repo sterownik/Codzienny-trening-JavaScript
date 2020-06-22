@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //domyslnie public
+
+        class Cat {
+            constructor(color) {
+                this._color = color;
+                //mowi ze to ma byc prywatne
+            }
+            //metoda pobieraja zawartosc kolor
+            getColor() {
+                return this._color;
+            }
+            setColor(value) {
+                this._color = value;
+            }
+        }
+
+        const kotek = new Cat("czarny");
+        kotek.setColor("bialy");
+    </script>
+</body>
+
+</html>
