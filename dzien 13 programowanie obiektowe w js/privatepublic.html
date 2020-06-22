@@ -21,12 +21,30 @@
                 return this._color;
             }
             setColor(value) {
-                this._color = value;
+                if (typeof value === "string") {
+                    this._color = value;
+                } else {
+                    console.log('wartosc nie prawidlowa');
+                }
+
             }
         }
 
         const kotek = new Cat("czarny");
-        kotek.setColor("bialy");
+        kotek.setColor("szary");
+
+
+        class Dog {
+            constructor(name, dogColor) {
+                this.name = name;
+                let color = dogColor;
+                this.getColor = () => {
+                    return color;
+                }
+
+            }
+        }
+        const fafik = new Dog("fafik", "brazowy");
     </script>
 </body>
 
