@@ -60,9 +60,13 @@
                 //trzeba robic w konstruktorze
                 this.getCounter = () => _counter;
                 // this.setCounter = (value) => 
+                this.getChange = () =>
+                    _changeNumber;
+                this.setChange = (val) =>
+                    _changeNumber = val;
 
                 this.setCounter = function (value) {
-                    _changeNumber++;
+                    this.setChange(this.getChange() + 1)
                     _counter = value;
                 }
 
@@ -72,10 +76,7 @@
                     _year = val;
 
 
-                this.getChange = () =>
-                    _changeNumber;
-                this.setChange = (val) =>
-                    _changeNumber = val;
+
             }
         }
         const polonez = new Car("polonez", 20000, 2000);
