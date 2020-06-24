@@ -2,3 +2,18 @@ h1.title {
     text-align: center;
     margin-top: 60px;
 }
+
+section.kafelki {
+    display: flex;
+    width: 90vw;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 120px;
+}
+
+section.kafelki div {
+    width: 32%;
+
+    height: 100%;
+    background: black;
+}
