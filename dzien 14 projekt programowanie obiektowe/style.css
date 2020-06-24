@@ -1,6 +1,7 @@
 h1.title {
     text-align: center;
     margin-top: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 section.kafelki {
@@ -8,12 +9,37 @@ section.kafelki {
     width: 90vw;
     margin: 0 auto;
     justify-content: space-between;
-    height: 120px;
+    height: 140px;
 }
 
 section.kafelki div {
     width: 32%;
-
     height: 100%;
     background: black;
+}
+
+section.wybor {
+    width: 50vw;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 30px;
+    justify-content: space-between;
+    display: flex;
+}
+
+section.wybor button {
+
+    height: 100%;
+    width: 68%;
+    border: none;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+}
+
+section.wybor input {
+    border: 1px solid black;
+    padding: 0;
+    height: 100%;
+    width: 27%;
 }
