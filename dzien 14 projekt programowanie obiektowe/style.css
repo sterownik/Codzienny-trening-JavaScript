@@ -43,3 +43,13 @@ section.wybor input {
     height: 100%;
     width: 27%;
 }
+
+section.opis {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+span {
+    font-weight: 900;
+    font-size: 19px;
+}
