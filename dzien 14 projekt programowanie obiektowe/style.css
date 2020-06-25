@@ -32,7 +32,7 @@ section.wybor button {
     height: 100%;
     width: 68%;
     border: none;
-    background-color: black;
+    background-color: #777;
     color: white;
     text-transform: uppercase;
 }
@@ -42,6 +42,8 @@ section.wybor input {
     padding: 0;
     height: 100%;
     width: 27%;
+    font-size: 29px;
+    text-align: center;
 }
 
 section.opis {
