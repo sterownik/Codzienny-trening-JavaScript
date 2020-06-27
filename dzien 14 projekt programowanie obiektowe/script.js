@@ -4,5 +4,4 @@ input.addEventListener("change", function () {
         alert("nie mozesz wpisac wartosci ujemnej");
         input.value = 0;
     }
-
 })
